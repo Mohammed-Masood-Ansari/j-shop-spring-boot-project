@@ -9,6 +9,7 @@ import com.jshop.jshopspringboot.repository.UserRepository;
 @Repository
 public class UserDao {
 
+	
 	@Autowired
 	private UserRepository repository;
 	/*
@@ -17,6 +18,7 @@ public class UserDao {
 	public User saveUserDao(User user) {
 		return repository.save(user);
 	}
+	
 	/*
 	 * loginUser
 	 */

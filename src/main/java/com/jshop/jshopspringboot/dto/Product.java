@@ -25,4 +25,5 @@ public class Product {
 	@ManyToOne
 	@JoinColumn(name="ownerid")
 	private ProductOwner productOwner;
+	
 }
