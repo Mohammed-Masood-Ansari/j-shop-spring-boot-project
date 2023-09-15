@@ -18,14 +18,26 @@ public class UserCartDao {
 	
 	@Autowired
 	private UserCart  userCart;
+	
+	@Autowired
+	private UserDao userDao;
+	
 	/*
 	 * add product in user cart
 	 */
-	
-	public UserCart addProductInUserCart(int productQuantity,int productId) {
+	public UserCart addProductInUserCartDao(int productQuantity,int productId) {
 		
 		Product product=productDao.getProductByIdDao(productId);
 		
-		return null;
+		if(product!=null) {
+			userCart.setProduct(product);
+			userCart.setProductQuantity(productQuantity);
+			//System.out.println(userDao.getUserId());
+			userCart.setUser(userDao.getUser());
+			
+			return cartRepository.save(userCart);
+		}else {
+			return null;
+		}
 	}
 }

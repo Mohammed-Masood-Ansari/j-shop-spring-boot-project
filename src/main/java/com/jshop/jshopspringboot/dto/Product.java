@@ -1,5 +1,7 @@
 package com.jshop.jshopspringboot.dto;
 
+import org.springframework.stereotype.Component;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
@@ -12,6 +14,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
+@Component
 public class Product {
 
 	@Id
@@ -25,5 +28,6 @@ public class Product {
 	@ManyToOne
 	@JoinColumn(name="ownerid")
 	private ProductOwner productOwner;
+	
 	
 }

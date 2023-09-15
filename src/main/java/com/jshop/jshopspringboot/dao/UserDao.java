@@ -9,7 +9,17 @@ import com.jshop.jshopspringboot.repository.UserRepository;
 @Repository
 public class UserDao {
 
-	
+	@Autowired
+	private User user;
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
 	@Autowired
 	private UserRepository repository;
 	/*
@@ -26,7 +36,7 @@ public class UserDao {
 	{
 		User user = repository.findByUserEmail(email);
 		if(user!=null) {
-			
+			setUser(user);
 			return user;
 		}
 		return null;
